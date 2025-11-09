@@ -1,0 +1,33 @@
+:root {
+	--borderColor: #313d4f;
+	/* background-color */
+	--primaryColor: #0a1330;
+	--secondaryColor: #0b1739;
+	--borderRadius: 10px;
+	--fontColor: white;
+	--linearColor-for-btn: linear-gradient(-60deg, #cb3cff 0%, #844aff 100%);
+}
+
+main {
+	margin-left: 250px;
+	padding: 40px;
+	width: 100%;
+}
+ h2 {
+	font-size: 32px;
+	margin-bottom: 30px;
+}
+
+.main-container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+	width: 100%;
+}
+
+.main-container .itemMain{
+	background:var(--secondaryColor);
+	border-radius: 16px;
+	padding: 24px;
+	border: 1px solid var(--borderColor);
+}

@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Admin dashboard</title>
+		<link rel="stylesheet" href="dashboard.css" />
+		<link rel="stylesheet" href="sidebar.css" />
+		<link rel="stylesheet" href="container_grap.css" />
+		<link rel="stylesheet" href="main_container.css" />
+	<!-- <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        } 
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0e27;
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* ============ SIDEBAR ============ */
+        
+
+        /* ============ MAIN CONTENT ============ */
+        main {
+            margin-left: 250px;
+            padding: 40px;
+            width: calc(100% - 250px);
+        }
+
+        main > h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        /* ============ MAIN GRID CONTAINER (4 cards + charts) ============ */
+        .main-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        /* ============ STAT CARDS ============ */
+        .itemMain {
+            background: #1a1f37;
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid #252b45;
+        }
+
+        .totalUser {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .totalUser p {
+            color: #a0aec0;
+            font-size: 14px;
+        }
+
+        .img-container {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .img-container img {
+            width: 32px;
+            height: 32px;
+        }
+
+        .figure p {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .statistic {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+        }
+
+        .statistic img {
+            width: 16px;
+            height: 16px;
+        }
+
+        .statistic .up {
+            color: #10b981;
+            font-weight: 600;
+        }
+
+        .statistic span:last-child {
+            color: #a0aec0;
+        }
+
+        /* ============ CHARTS SECTION (NESTED GRID) ============ */
+        .item-grap {
+            grid-column: 1 / -1; /* Span all 4 columns */
+            display: grid;
+ 			grid-template-columns: repeat(auto-fill, minmax(2fr, 1fr)); /* Left chart 2x wider */
+            gap: 20px;
+        }
+
+        
+
+       
+
+       
+
+        .logo-total {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .logo-total img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .logo-total p {
+            color: #a0aec0;
+            font-size: 14px;
+        }
+
+        .profit-ctn .profit {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .profit-ctn .statistic {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .profit-ctn .statistic p {
+            color: #10b981;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .profit-ctn .statistic img {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* Revenue Header Right */
+        .totalRevenue-head-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .Revenue,
+        .Expenses {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .Revenue .circle {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #8b5cf6;
+        }
+
+        .Expenses .circle {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #3b82f6;
+        }
+
+        .Revenue p,
+        .Expenses p {
+            font-size: 13px;
+            color: #a0aec0;
+        }
+
+        input[type="date"] {
+            background: #252b45;
+            border: 1px solid #3a4563;
+            padding: 8px 12px;
+            border-radius: 8px;
+            color: white;
+            font-size: 13px;
+        }
+
+        /* ============ CHART BODIES ============ */
+        .totalRevenue-body {
+            margin-top: 20px;
+        }
+
+        .Figure-Grab-ctn {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .Figure {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: #6b7280;
+            font-size: 12px;
+            padding-right: 10px;
+        }
+
+        .revenue-img {
+            flex: 1;
+        }
+
+        .revenue-img img {
+            width: 100%;
+            height: auto;
+        }
+
+        .date {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            color: #6b7280;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+        /* Profit Body */
+        .total-profit-body {
+            margin: 20px 0;
+        }
+
+        .profit-img img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .total-profit-body ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            color: #6b7280;
+            font-size: 12px;
+        }
+
+        /* Sessions Body */
+        .tota-sessions-body {
+            margin: 20px 0;
+        }
+
+        .container-figure {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .container-figure .figure {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: #6b7280;
+            font-size: 12px;
+            padding-right: 10px;
+        }
+
+        .sessions-img {
+            flex: 1;
+        }
+
+        .sessions-img img {
+            width: 100%;
+            height: auto;
+        }
+
+        .tota-sessions-body .date {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            color: #6b7280;
+            font-size: 12px;
+        }
+
+        /* ============ CHART FOOTERS ============ */
+        .total-profit-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 16px;
+            font-size: 13px;
+            color: #a0aec0;
+        }
+
+        .view-report {
+            color: #8b5cf6;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .live {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .live div p {
+            background: #10b981;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 1400px) {
+            .main-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 200px;
+            }
+
+            main {
+                margin-left: 200px;
+                width: calc(100% - 200px);
+            }
+
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+
+            .item-grap {
+                grid-template-columns: 1fr;
+            }
+
+            .total-revenue-ctn {
+                grid-row: 1;
+            }
+        }
+    </style>  -->
+	</head>
+	<body>
+		<div class="container">
+			<sidebar class="sidebar">
+				<div class="logo">
+					<h2>Admin Dashboard</h2>
+				</div>
+				<div class="profile">
+					<img src="../admin-dashboard/logo/Myprofile.jpg" alt="" />
+					<h2 class="name">Ly Yeakkhai</h2>
+				</div>
+				<div class="menu">
+					<hr />
+					<ul>
+						<li>
+							<button class="onclick">Dashboard</button>
+						</li>
+						<li>
+							<button class="btn" >Orders</button>
+						</li>
+						<li>
+							<button class="btn">Products</button>
+						</li>
+						<li>
+							<button class="btn">Add Products</button>
+						</li>
+
+						<li>
+							<button class="btn">Customers</button>
+						</li>
+					</ul>
+					<hr />
+					<div class="setting-logout">
+						<button class="btn">Settings</button>
+						<button class="onclick">Logout</button>
+					</div>
+				</div>
+			</sidebar>
+			<main>
+				<h2>Dashboard</h2>
+				<div class="main-container">
+					<div class="itemMain">
+						<div class="totalUser">
+							<p>Total users</p>
+							<div class="img-container totalUser-logo">
+								<img src="../admin-dashboard/logo/Group.png" alt="" />
+							</div>
+						</div>
+
+						<div class="figure">
+							<p>40,233</p>
+						</div>
+						<div class="statistic">
+							<img
+								src="../admin-dashboard/logo/up arrow.png"
+								alt=""
+								class="logo"
+							/>
+							<span class="up">25%</span>
+							<span>Up from yesterday</span>
+						</div>
+					</div>
+					<div class="itemMain">
+						<div class="totalUser">
+							<p>Total Order</p>
+							<div class="img-container totalOrder-logo">
+								<img src="../admin-dashboard/logo/icon.png" alt="" />
+							</div>
+						</div>
+
+						<div class="figure">
+							<p>10293</p>
+						</div>
+						<div class="statistic">
+							<img
+								src="../admin-dashboard/logo/up arrow.png"
+								alt=""
+								class="logo"
+							/>
+							<span class="up">1.3%</span>
+							<span>Up from past week</span>
+						</div>
+					</div>
+					<div class="itemMain">
+						<div class="totalUser">
+							<p>Total Sales</p>
+							<div class="img-container totalSales-logo">
+								<img
+									src="../admin-dashboard/logo/icon1.png"
+									alt=""
+									class="logo"
+								/>
+							</div>
+						</div>
+
+						<div class="figure">
+							<p>$123,1200</p>
+						</div>
+						<div class="statistic">
+							<img
+								src="../admin-dashboard/logo/down arrow.png"
+								alt=""
+								class="logo"
+							/>
+
+							<span class="up">4.3%</span>
+							<span>Down from yesterday</span>
+						</div>
+					</div>
+					<div class="itemMain">
+						<div class="totalUser">
+							<p>Total Pending</p>
+							<div class="img-container totalPending-logo">
+								<img src="../admin-dashboard/logo/icon2.png" alt="" />
+							</div>
+						</div>
+						<div class="figure">
+							<p>43,453</p>
+						</div>
+						<div class="statistic">
+							<img
+								src="../admin-dashboard/logo/up arrow.png"
+								alt=""
+								class="logo"
+							/>
+							<span class="up">67.2%</span>
+							<span>Up from yesterday</span>
+						</div>
+					</div>
+
+					<div class="item-grap">
+						<div class="total-revenue-ctn">
+							<div class="totalRevenue-head">
+								<div class="totalRevenue-head-left">
+									<div class="logo-total">
+										<img
+											src="../admin-dashboard/logo/Sales Icon for grap part.png"
+											alt=""
+										/>
+										<p>Total Revenue</p>
+									</div>
+									<div class="profit-ctn">
+										<p class="profit">$240.89k</p>
+										<div class="statistic">
+											<div class="logo-total">
+												<p>24.23%</p>
+												<img src="" alt="" />
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="totalRevenue-head-right">
+									<div class="Revenue">
+										<div class="circle"></div>
+										<p>Revenue</p>
+									</div>
+									<div class="Expenses">
+										<div class="circle"></div>
+										<p>Expenses</p>
+									</div>
+									<input type="date" name="" id="" />
+								</div>
+							</div>
+							<div class="totalRevenue-body">
+								<div class="Figure-Grab-ctn">
+									<ul class="Figure">
+										<li>250k</li>
+										<li>200k</li>
+										<li>150k</li>
+										<li>100k</li>
+										<li>50k</li>
+										<li>25k</li>
+										<li>0k</li>
+									</ul>
+									<div class="revenue-img">
+										<img
+											src="../admin-dashboard/grap-img/grap1.png"
+											alt=""
+											class="Grap"
+										/>
+									</div>
+								</div>
+								<ul class="date">
+									<li>Jan</li>
+									<li>Feb</li>
+									<li>Mar</li>
+									<li>Apr</li>
+									<li>May</li>
+									<li>Jun</li>
+									<li>Jul</li>
+									<li>Aug</li>
+									<li>Sep</li>
+									<li>Oct</li>
+									<li>Nov</li>
+									<li>Dec</li>
+								</ul>
+							</div>
+						</div>
+						<div class="total-profit">
+							<div class="total-profit-head">
+								<div class="logo-total">
+									<img
+										src="../admin-dashboard/logo/Sales Icon for grap part.png"
+										alt=""
+									/>
+									<p>Total Profits</p>
+								</div>
+								<div class="profit-ctn">
+									<p class="profit">$145.89k</p>
+									<div class="statistic">
+										<p>24.23%</p>
+										<img
+											src="../admin-dashboard/logo/Arrow External Right for grap part.png"
+											alt=""
+										/>
+									</div>
+								</div>
+							</div>
+
+							<div class="total-profit-body">
+								<div class="profit-img">
+									<img src="../admin-dashboard/grap-img/grap_2.png" alt="" />
+								</div>
+								<ul>
+									<li class="item">12 AM</li>
+									<li class="item">8 AM</li>
+									<li class="item">4 PM</li>
+									<li class="item">11 PM</li>
+								</ul>
+							</div>
+							<div class="total-profit-footer">
+								<p>Last 12 months</p>
+								<p class="view-report">View report</p>
+							</div>
+						</div>
+						<div class="total-sessions">
+							<div class="total-sessions-head">
+								<div class="logo-total">
+									<img
+										src="../admin-dashboard/logo/Sessions Icon for grap part.png"
+										alt=""
+									/>
+									<p>Total Profits</p>
+								</div>
+								<div class="profit-ctn">
+									<p class="profit">$145.89k</p>
+									<div class="statistic">
+										<p>24.23%</p>
+										<img
+											src="../admin-dashboard/logo/Arrow External Right for grap part.png"
+											alt=""
+										/>
+									</div>
+								</div>
+							</div>
+							<div class="tota-sessions-body">
+								<div class="container-figure">
+									<ul class="figure">
+										<li>500</li>
+										<li>250</li>
+										<li>100k</li>
+										<li>0k</li>
+									</ul>
+									<div class="sessions-img">
+										<img src="../admin-dashboard/grap-img/grap3.png" alt="" />
+									</div>
+								</div>
+
+								<ul class="date">
+									<li class="item">12 AM</li>
+									<li class="item">8 AM</li>
+									<li class="item">4 PM</li>
+									<li class="item">11 PM</li>
+								</ul>
+							</div>
+							<div class="total-profit-footer">
+								<div class="live">
+									<div><p>Live</p></div>
+									<p>100k visitors</p>
+								</div>
+
+								<p class="view-report">View report</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+	</body>
+</html>
