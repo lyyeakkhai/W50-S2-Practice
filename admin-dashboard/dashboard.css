@@ -1,39 +1,31 @@
-
 :root {
-    --borderColor:#313D4F;
-    /* background-color */
-    --primaryColor:#0A1330;   
-    --secondaryColor:#0B1739;
-    --borderRadius: 10px;
-    --fontColor: white;
-    --linearColor-for-btn: linear-gradient(-60deg, #CB3CFF 0%, #844AFF 100%);
+	--borderColor: #313d4f;
+	/* background-color */
+	--primaryColor: #0a1330;
+	--secondaryColor: #0b1739;
+	--borderRadius: 10px;
+	--fontColor: white;
+	--linearColor-for-btn: linear-gradient(-60deg, #cb3cff 0%, #844aff 100%);
 }
-
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
 .container {
-    display: flex;
-    min-height: 100vh;
-    background-color: var(--primaryColor);
-    color: var(--fontColor);
-    gap: 20px;
+	display: flex;
+	min-height: 100vh;
+	background-color: var(--primaryColor);
+	color: var(--fontColor);
+	gap: 20px;
 }
 
 h1 {
-    font-size : 28px;
-    font-weight: bold;
+	font-size: 28px;
+	font-weight: bold;
 }
-
-
-
-
-
 
 

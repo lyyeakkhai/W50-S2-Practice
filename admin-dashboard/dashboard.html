@@ -8,7 +8,64 @@
 		<link rel="stylesheet" href="sidebar.css" />
 		<link rel="stylesheet" href="container_grap.css" />
 		<link rel="stylesheet" href="main_container.css" />
-	
+
+		<style>
+			@media (max-width: 1024px) {
+				.main-container {
+					grid-template-columns: repeat(2, 1fr);
+				}
+
+				.item-grap {
+					grid-template-columns: 1fr;
+				}
+
+				.total-revenue-ctn,
+				.total-profit,
+				.total-sessions {
+					grid-column: 1;
+					grid-row: auto;
+				}
+
+				.totalRevenue-head {
+					flex-direction: column;
+					gap: 16px;
+				}
+			}
+
+			@media (max-width: 768px) {
+				.main-container {
+					grid-template-columns: 1fr;
+					gap: 16px;
+				}
+
+				.totalRevenue-head-right {
+					flex-wrap: wrap;
+					gap: 12px;
+				}
+
+				input[type="date"] {
+					width: 100%;
+				}
+			}
+
+			@media (max-width: 480px) {
+				.itemMain,
+				.total-revenue-ctn,
+				.total-profit,
+				.total-sessions {
+					padding: 16px;
+				}
+
+				.figure p,
+				.profit-ctn .profit {
+					font-size: 20px;
+				}
+
+				.date {
+					font-size: 10px;
+				}
+			}
+		</style>
 	</head>
 	<body>
 		<div class="container">
@@ -27,7 +84,7 @@
 							<button class="onclick">Dashboard</button>
 						</li>
 						<li>
-							<button class="btn" >Orders</button>
+							<button class="btn">Orders</button>
 						</li>
 						<li>
 							<button class="btn">Products</button>
